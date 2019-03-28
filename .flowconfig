@@ -1,0 +1,10 @@
+[ignore]
+.*/node_modules
+.*/bower_components
+.*/lib
+.*/coverage
+
+[include]
+
+[options]
+module.system.node.resolve_dirname=node_modules
