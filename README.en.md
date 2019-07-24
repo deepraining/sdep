@@ -1,43 +1,43 @@
 # sdep
 
-[English Documentation](./README.en.md)
+[中文文档](./README.md)
 
-查看一个模块的依赖树.
+See the dependencies tree of a module.
 
-## 快速开始
+## quick start
 
-安装 sdep:
+Install sdep:
 
 ```
 npm install sdep -g
 ```
 
-使用:
+Usage:
 
 ```
 sdep [options] <file>
 ```
 
-## 参数
+## options
 
-- `-q, --query <query>`: 查询某个字符串，过滤输出
-- `-r, --regular`: 当查询某个字符串，过滤输出时，把查询字符串当作正则匹配
-- `-i, --ignore`: 忽略 node_modules 下的文件
-- `-d, --directory <directory>`: 包含所有模块的目录, 默认是 process.cwd()
-- `-b, --base <base>`: 简写输出的基路径, 默认是 process.cwd()
-- `--rc <rc>`: RequireJs 配置 for AMD modules
-- `--wc <wc>`: Webpack 配置 for aliased modules
-- `--tc <tc>`: TypeScript 配置
-- `-f, --full`: 当使用查询某个字符串，过滤输出时，显示完整的依赖链
+- `-q, --query <query>`: a query string to filter output
+- `-r, --regular`: regard query string as regular expression to filter output
+- `-i, --ignore`: ignore files under node_modules
+- `-d, --directory <directory>`: the directory containing all modules, default process.cwd()
+- `-b, --base <base>`: base path to shorten the output lines, default process.cwd()
+- `--rc <rc>`: RequireJs config for AMD modules
+- `--wc <wc>`: Webpack config for aliased modules
+- `--tc <tc>`: TypeScript config
+- `-f, --full`: show full dependencies chain when use a query string to filter output
 
-## 使用的第三方库
+## used libraries
 
 - [commander.js](https://github.com/tj/commander.js)
 - [node-dependency-tree](https://github.com/dependents/node-dependency-tree)
 
-## 示例
+## examples
 
-#### 查看一个文件的依赖结构
+#### see a file's dependencies hierarchy
 
 ```
 sdep example/index.js
@@ -98,7 +98,7 @@ example/index.js
   └ example/async/index.css
 ```
 
-#### 查看一个文件包含 react 的依赖链
+#### see a file's dependencies chain which contains react
 
 ```
 sdep example/index.js -q react
@@ -117,7 +117,7 @@ example/index.js
     └ node_modules/react/index.js
 ```
 
-#### 查看一个文件包含 less 或 scss 的依赖链
+#### see a file's dependencies chain which contains less or scss
 
 ```
 sdep example/index.js -q 'less|scss' -r
